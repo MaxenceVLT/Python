@@ -4,7 +4,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 popup = Tk()
-popup.title("Email")
+popup.title("Mailer")
 popup.geometry("520x140")
 popup.resizable(0,0)
 
