@@ -37,7 +37,7 @@ label4.grid(row=4, column=0)
 message_entry=Entry(popup,width=25)
 message_entry.grid(row=4, column=1)
 
-file_label = Label(popup,text="test")
+file_label = Label(popup,text="")
 file_label.grid(row=4, column=3)
 
 def get_file():
