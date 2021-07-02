@@ -26,7 +26,6 @@ label2.grid(row=2, column=0)
 receiver_email_entry=Entry(popup,width=25)
 receiver_email_entry.grid(row=2, column=1)
 
-
 label3=Label(popup,text="Sujet")
 label3.grid(row=3, column=0)
 subject_message_entry=Entry(popup,width=25)
@@ -41,8 +40,8 @@ file_label = Label(popup,text="")
 file_label.grid(row=4, column=3)
 
 def get_file():
-    file_test =  filedialog.askopenfilename()
-    file_label.config(text=file_test)
+    file_attachement =  filedialog.askopenfilename()
+    file_label.config(text=file_attachement)
 
 button_attachement=Button(popup,text="Joindre",width=7,command=get_file)
 button_attachement.grid(row=4, column=2)
@@ -57,14 +56,12 @@ def send():
     msg['Subject'] = subject_message_entry.get()  
     message = message_entry.get()
     msg.attach(MIMEText(message))
-
     fileName = file_label.cget("text")
     file = open(fileName, "rb")
     fileBaseName = basename(fileName)
     part = MIMEApplication(file.read(), Name = fileBaseName)
     part.add_header('Content-Disposition', 'attachment; filename="' + fileBaseName + '"')
     msg.attach(part)
-
     gmail.send_message(msg)
     gmail.quit()
     label4=Label(popup,text="Message correctement envoyé")
