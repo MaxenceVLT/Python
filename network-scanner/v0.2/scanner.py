@@ -28,7 +28,7 @@ button2.grid(row=1, column=1, sticky=N, pady=75)
 text1 = tk.Text(popup, width=35, height=16)
 text1.grid(row=1, column=1, sticky=N,pady=105)
 
-def hosts_scan ():
+def hosts_scan():
     interface = "eth0"
     ips = "192.168.1.0/24"
     conf.verb = 0
