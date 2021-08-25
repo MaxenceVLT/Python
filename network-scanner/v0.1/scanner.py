@@ -1,11 +1,9 @@
-from time import sleep
 from tkinter import *
 import tkinter as tk
 from scapy.all import *
-import nmap
 
 popup= Tk()
-popup.title("Network Tools")
+popup.title("Outil de scannage")
 popup.geometry("200x365")
 popup.resizable(0,0)
 
@@ -23,7 +21,6 @@ def hosts_scan ():
     for snd,rcv in ans:
         hosts = (rcv.sprintf(r"%ARP.psrc% - %Ether.src%")) 
         listbox1.insert(1,hosts)
-        print(hosts)
 
 popup.mainloop()
 
